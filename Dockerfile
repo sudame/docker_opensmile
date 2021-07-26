@@ -7,7 +7,6 @@ RUN bash build.sh
 WORKDIR /opensmile/build/progsrc/smilextract
 RUN make && make install
 WORKDIR /workspace
-COPY ./command.sh /
-RUN chmod 744 /command.sh
+COPY ./analyze /usr/local/bin
+RUN chmod 744 /usr/local/bin/analyze
 WORKDIR /workspace
-CMD ["/command.sh"]
